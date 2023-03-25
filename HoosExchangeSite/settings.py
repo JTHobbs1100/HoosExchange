@@ -30,7 +30,7 @@ SECRET_KEY = 'hi not secret key'
 DEBUG = True
 
 #CHANGE WEBSITE NAME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-ALLOWED_HOSTS = ['localhost','127.0.0.1','djangotutorial2024.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','hoosexchange.herokuapp.com']
 
 # Activate Django-Heroku.
 # Use this code to avoid the psycopg2 / django-heroku error!
