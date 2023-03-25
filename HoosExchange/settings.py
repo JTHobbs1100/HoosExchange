@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv, find_dotenv
-
 import dj_database_url
 from django.core.management.utils import get_random_secret_key
 
@@ -69,7 +68,7 @@ ROOT_URLCONF = 'HoosExchange.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
