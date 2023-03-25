@@ -20,7 +20,9 @@ def homeView(request: HttpRequest):
     return render(request, 'HoosExchangeSite/home.html')
 
 def makePost(request: HttpRequest):
-    name = ""
+    name = "BAD"
+
+
     if request.method == 'POST':
         form = makeListingForm(request.POST)
         if form.is_valid():
@@ -31,8 +33,16 @@ def makePost(request: HttpRequest):
             phone_number = form.cleaned_data['phone_number']
             email = form.cleaned_data['email']
 
+            newListing = Listing(name=name, tag=tag, description=description, price=price, phone_number=phone_number,
+                                 email=email)
+            newListing.save()
+
     else:
         form = makeListingForm()
+
+
+
+
 
     context = {
         'form': form,
@@ -41,6 +51,13 @@ def makePost(request: HttpRequest):
 
     return render(request, 'HoosExchangeSite/makePost.html', context)
 
-def viewItems(request: HttpRequest):
-    return render(request, 'HoosExchangeSite/viewItems.html')
+class viewItems(generic.ListView):
+    template_name = 'HoosExchangeSite/viewItems.html'
+    context_object_name = 'listings_list'
 
+    def get_queryset(self):
+        """
+        Return the last five published questions (not including those set to be
+        published in the future).
+        """
+        return Listing.objects.all()
