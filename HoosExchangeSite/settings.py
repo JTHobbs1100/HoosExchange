@@ -46,7 +46,6 @@ except ImportError:
 # Application definition
 
 INSTALLED_APPS = [
-    'HoosExchange.apps.HoosExchangeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
