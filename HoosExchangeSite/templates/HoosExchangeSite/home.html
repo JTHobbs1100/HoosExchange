@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 {# homepage #}
 
 {% load bootstrap5 %}
@@ -9,13 +11,21 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+{% include "HoosExchangeSite/header.html" %}
 <h1>HELLO SLAY MAMA</h1>
+
+
+<nav class="navbar fixed-bottom navbar-light" style="background-color: #ececec;">
+
+<h6 class="nav-item" style="color: grey"> &nbsp; &nbsp;Made by Jacob Hobbs and Sai Singamsetty for UVA's HooHacks '23 </h6>
+
+</nav>
 </body>
 </html>
