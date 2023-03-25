@@ -15,5 +15,11 @@ from oauthlib.oauth2 import TokenExpiredError
 
 
 def homeView(request: HttpRequest):
-
     return render(request, 'HoosExchangeSite/home.html')
+
+def makePost(request: HttpRequest):
+    return render(request, 'HoosExchangeSite/makePost.html')
+
+def viewItems(request: HttpRequest):
+    return render(request, 'HoosExchangeSite/viewItems.html')
+
