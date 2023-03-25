@@ -12,6 +12,8 @@ from django.conf import settings
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 
+
+
 def homeView(request: HttpRequest):
 
-    return render(request, 'HoosExchange/home.html')
+    return render(request, 'HoosExchangeSite/home.html')
