@@ -30,7 +30,7 @@ SECRET_KEY = 'hi not secret key'
 DEBUG = True
 
 #CHANGE WEBSITE NAME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-ALLOWED_HOSTS = ['localhost','127.0.0.1','djangotutorial2024.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','hoosexchange.herokuapp.com']
 
 # Activate Django-Heroku.
 # Use this code to avoid the psycopg2 / django-heroku error!
@@ -46,6 +46,7 @@ except ImportError:
 # Application definition
 
 INSTALLED_APPS = [
+    'HoosExchange.apps.HoosExchangeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,6 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 
 # Default primary key field type
