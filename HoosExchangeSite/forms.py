@@ -1,10 +1,10 @@
 from django import forms
 
 TYPES = (
-    ("Bottoms"),
-    ("Top"),
-    ("Shoes"),
-    ("Accessory"),
+    ("Bottoms", "Bottoms"),
+    ("Top", "Top"),
+    ("Shoes", "Shoes"),
+    ("Accessory", "Accessory"),
 )
 class makeListingForm(forms.Form):
     #Name, tag type, picture of item, price (if any), contact info (email/phone), description
@@ -14,7 +14,12 @@ class makeListingForm(forms.Form):
     # page = forms.IntegerField(max_value=100, initial=1)
 
     name = forms.CharField(label='name', max_length=100, required=True)
-    tag = forms.ChoiceField(choices=TYPES)
-    
+    tag = forms.ChoiceField(choices=TYPES) #change to types
+    description = forms.CharField(max_length=1000)
+    price = forms.DecimalField(decimal_places=2, max_digits=10)
+    phone_number = forms.IntegerField(max_value=9999999999)
+    email = forms.CharField(max_length=100)
+
+
 
 
