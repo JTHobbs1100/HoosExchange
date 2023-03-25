@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn HoosExchange.wsgi
+web: gunicorn HoosExchangeSite.wsgi
