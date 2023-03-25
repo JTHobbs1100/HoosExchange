@@ -1,4 +1,6 @@
 from django import forms
+from PIL import Image
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 TYPES = (
     ("Bottoms", "Bottoms"),
@@ -19,6 +21,10 @@ class makeListingForm(forms.Form):
     price = forms.DecimalField(decimal_places=2, max_digits=10)
     phone_number = forms.IntegerField(max_value=9999999999)
     email = forms.CharField(max_length=100)
+    img = forms.ImageField()
+
+
+
 
 
 
