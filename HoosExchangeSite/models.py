@@ -19,7 +19,7 @@ class Listing(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=10)
     phone_number = models.IntegerField()
     email = models.CharField(max_length=100)
-    img = models.ImageField(upload_to='images/')
+    #img = models.ImageField(upload_to='images/') <-----
     #image = models.ImageField(upload_to='images/') #, default='static/HoosExchangeSite/images/noImage.png'
 
     def __str__(self):

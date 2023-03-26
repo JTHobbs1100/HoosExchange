@@ -29,6 +29,7 @@ def makePost(request: HttpRequest):
         if form.is_valid():
 
             form.save()
+            return HttpResponseRedirect(reverse('HoosExchangeSite:viewItems'))
 
     else:
         form = makeListingForm()
@@ -45,7 +46,7 @@ def makePost(request: HttpRequest):
     return render(request, 'HoosExchangeSite/makePost.html', context)
 
 def viewItems(request):
-    if request.method == 'GET':
+
         Listings = Listing.objects.all()
         return render(request, 'HoosExchangeSite/viewItems.html',
-                       {'listings': Listings})
+                       {'listings_list': Listings})
