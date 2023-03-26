@@ -44,7 +44,7 @@ class newModel(models.Model):
     tag = models.CharField(max_length=100, choices=TYPES, default="")
     description = models.CharField(max_length=1000, default="")
     price = models.DecimalField(decimal_places=2, max_digits=10, default=0.0)
-    phone_number = models.IntegerField(default=0)
+    phone_number = models.CharField(max_length=11, default="")
     email = models.CharField(max_length=100, default="")
     image = models.ImageField(upload_to='images', default="/HoosExchangeSite/images/noImage.png")
 
