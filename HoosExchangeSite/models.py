@@ -28,3 +28,6 @@ class Listing(models.Model):
 
     def __str__(self):
         return self.person_name.__str__() + "'s Item"
+
+class newModel(models.Model):
+    name = models.CharField(max_length=100)
