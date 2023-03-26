@@ -30,4 +30,20 @@ class Listing(models.Model):
         return self.name.__str__() + "'s Item"
 
 class newModel(models.Model):
+    TYPES = (
+        ("Bottoms", "Bottoms"),
+        ("Top", "Top"),
+        ("Shoes", "Shoes"),
+        ("Accessory", "Accessory"),
+    )
+
     name = models.CharField(max_length=100)
+    # item_name = models.CharField(max_length=100)
+    tag = models.CharField(max_length=100, choices=TYPES, default="")
+    description = models.CharField(max_length=1000, default="")
+    price = models.DecimalField(decimal_places=2, max_digits=10, default=0.0)
+    phone_number = models.IntegerField(default=0)
+    email = models.CharField(max_length=100, default="")
+
+    def __str__(self):
+        return self.name.__str__() + "'s Item"
