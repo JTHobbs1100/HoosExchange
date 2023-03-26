@@ -7,13 +7,13 @@
 <body>
 {% include "HoosExchangeSite/header.html" %}
 
-{% if listings_list %}
+{% if listings %}
     {% for listing in listings_list %}
         <li>
-            <h5 style="float: left"><b>{{ listing.name }} &nbsp;</b></h5>
+            <h5 style="float: left">{{ listing.name }} &nbsp </h5>
             <h5>{{ listing.tag }}</h5>
 
-              
+
 
 
         </li>

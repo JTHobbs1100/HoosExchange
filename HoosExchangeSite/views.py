@@ -44,13 +44,8 @@ def makePost(request: HttpRequest):
 
     return render(request, 'HoosExchangeSite/makePost.html', context)
 
-class viewItems(generic.ListView):
-    template_name = 'HoosExchangeSite/viewItems.html'
-    context_object_name = 'listings_list'
-
-    def get_queryset(self):
-        """
-        Return the last five published questions (not including those set to be
-        published in the future).
-        """
-        return Listing.objects.all()
+def viewItems(request):
+    if request.method == 'GET':
+        Listings = Listing.objects.all()
+        return render(request, 'HoosExchangeSite/viewItems.html',
+                       {'listings': Listings})
