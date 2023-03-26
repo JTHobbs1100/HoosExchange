@@ -1,31 +1,35 @@
 <!DOCTYPE html>
+{# homepage #}
+
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .body{
+            background-color: #ecfadc;
+            }
+    </style>
 </head>
-<body>
+<body class="body">
 {% include "HoosExchangeSite/header.html" %}
-
-{% if listings_list %}
-    {% for listing in listings_list %}
-
-
+    {% if listings_list %}
+        {% for listing in listings_list %}
             <a href = "{% url 'singleItem' id=listing.id %}">
                 {% if listing.image.url %}
-
-        <img src="{{ listing.image.url }}" alt="image" style="max-height:300px">
-        {% endif %}
+                    <img src="{{ listing.image.url }}" alt="image" style="max-height:300px">
+                {% endif %}
             </a>
-
-
-
-
-
-
-
-    {% endfor %}
-
-{% endif %}
-</body>
+        {% endfor %}
+    {% endif %}
+</body >
 </html>
