@@ -44,6 +44,7 @@ class newModel(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=10, default=0.0)
     phone_number = models.IntegerField(default=0)
     email = models.CharField(max_length=100, default="")
+    image = models.ImageField(upload_to='images', default="/HoosExchangeSite/images/noImage.png")
 
     def __str__(self):
         return self.name.__str__() + "'s Item"
