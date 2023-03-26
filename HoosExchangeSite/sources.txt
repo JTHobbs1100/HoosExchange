@@ -2,3 +2,23 @@ Sustainability statistics:
 https://avantilipids.com/news/sustainability-seconds-review-can-fashion-ever-be-sustainable#:~:text=Levi%20Strauss%20estimates%20that%20about,an%20%E2%80%9Caverage%E2%80%9D%20American%20car.
 https://www.future.green/futureblog/carbon-footprint-and-price-comparison-secondhand-vs.-new-clothing#:~:text=Carbon%20Footprint%3A%20One%20t%2Dshirt,kg%20of%20CO2%20per%20wear.
 https://getbootstrap.com/docs/5.0/
+
+sources used to help with parallax scrolling and some bootstrap styling:
+https://www.w3schools.com/howto/howto_css_parallax.asp
+https://codepen.io/kathcue/pen/EagRYq?editors=1100
+
+images used:
+background image of trees on home page: https://corporate.walmart.com/purpose/sustainability
+background image of cville on home page: https://news.virginia.edu/content/uva-embarks-ambitious-10-year-sustainability-plan
+
+test images used for demoing:
+desk on viewitems page: https://abutterflyhouse.com/thrift-store-furniture-shopping-a-complete-guide/
+blue jeans on viewitems page: https://www.etsy.com/sg-en/listing/586951111/womens-thrifted-jeans-womens-lee-jeans?show_sold_out_detail=1
+bench on viewitems page: https://www.homedit.com/online-furniture-thrift-stores/
+gray shoes on viewitems page: https://splurgefrugal.com/mens-guide-to-thrift-shop-shoes/
+reeboks shoes on viewitems page: https://www.ebay.com/itm/255997265791
+earrings on viewitems page: https://adoracionlifestylebrand.com/products/rosetta-mustard-stone-oval-earrings
+
+
+help with django:
+docs.djangoproject.com
