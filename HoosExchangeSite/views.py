@@ -30,20 +30,11 @@ def makePost(request: HttpRequest):
         form = makeListingForm(request.POST, request.FILES)
         if form.is_valid():
             # personalKey = random.randint(1, 1000000000)
-
-
             form.save()
             img_object = form.instance
-
-            return HttpResponseRedirect(reverse('HoosExchangeSite:viewItems'))
-
+            #return HttpResponseRedirect(reverse('HoosExchangeSite:viewItems'))
     else:
         form = makeListingForm()
-
-
-
-
-
     context = {
         'form': form,
         'name': name,
