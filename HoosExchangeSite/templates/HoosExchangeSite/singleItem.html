@@ -1,43 +1,99 @@
 <!DOCTYPE html>
+{# homepage #}
+
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+}
+.parallax1 {
+  /* The image used */
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/005/570/154/large/mim-xiong-04.jpg?1492064482");
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-alight: center;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.center-text:before{
+     content: '';
+     display: inline-block;
+     height: 100%;
+     vertical-align: middle;
+}
+
+.h1{
+    background-color: #c2f0c2;
+    color: #004C54;
+    font-size: 3vh;
+    padding: 15px;
+}
+
+.h4{
+    background-color: #c2f0c2;
+    color: #004C54;
+}
+
+.parallax1-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.parallax2 {
+  /* The image used */
+  background-image: url("https://www.twi-global.com/CachedImage.axd?ImageName=What-is-Sustainability.jpg&ImageWidth=784&ImageHeight=379&ImageVersionID=102110&ImageModified=20201029133929");
+
+  /* Set a specific height */
+  min-height: 300px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 </head>
+
 <body>
 {% include "HoosExchangeSite/header.html" %}
 
-{% if limage.url %}
-
-        <img src="{{ limage.url }}" alt="image" style="max-height:300px">
-{% endif %}
-<p> <b>Name of seller: </b> {{ lname }}</p>
-<p> <b>Price:</b> ${{ lprice }} </p>
-<p> <b>Phone:</b>  {{ lphone }}</p>
-<p> <b>Email:</b>  {{ lemail }}</p>
-<br>
-<p> <b>Type:</b>  {{ ltag }}</p>
-<p> <b>Description:</b>  {{ ldescription }}</p>
-
-
-
-
-
-
-
-
-
-
-
-
-{#lname = singleListing.name#}
-{#    ltag = singleListing.tag#}
-{#    ldescription = singleListing.description#}
-{#    lprice = singleListing.price#}
-{#    lphone = singleListing.phone_number#}
-{#    lemail = singleListing.email#}
-{#    limage = singleListing.image#}
-
-
+    <div class="parallax1 center-text">
+        <div class="parallax1-content">
+            <div class="container" style="background-color:#c2f0c2">
+            {% if limage.url %}
+                <img src="{{ limage.url }}" alt="image" style="max-height:300px">
+            {% endif %}
+            <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Name of seller: </b> {{ lname }}</h4>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Price:</b> ${{ lprice }} </h4>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Phone:</b>  {{ lphone }}</h4>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Email:</b>  {{ lemail }}</h4>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Type:</b>  {{ ltag }}</h4>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Description:</b>  {{ ldescription }}</h4>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
