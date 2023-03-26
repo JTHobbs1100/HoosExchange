@@ -22,6 +22,7 @@
 </head>
 <body class="body">
 {% include "HoosExchangeSite/header.html" %}
+<h3 class="text-center" style="color:#004C54">Click on the listings to see more info!</h3>
     {% if listings_list %}
         {% for listing in listings_list %}
             <a href = "{% url 'singleItem' id=listing.id %}">
