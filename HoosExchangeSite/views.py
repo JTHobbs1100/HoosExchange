@@ -27,18 +27,8 @@ def makePost(request: HttpRequest):
 
         form = makeListingForm(request.POST, request.FILES)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            tag = form.cleaned_data['tag']
-            description = form.cleaned_data['description']
-            price = form.cleaned_data['price']
-            phone_number = form.cleaned_data['phone_number']
-            email = form.cleaned_data['email']
 
-
-
-            newListing = Listing(name=name, tag=tag, description=description, price=price, phone_number=phone_number,
-                                 email=email)
-            newListing.save()
+            form.save()
 
     else:
         form = makeListingForm()
