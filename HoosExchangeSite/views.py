@@ -67,5 +67,6 @@ def singleItem(request, id):
     lprice = singleListing.price
     lphone = singleListing.phone_number
     lemail = singleListing.email
-    context={'lname':lname, 'ltag':ltag, 'ldescription':ldescription,'lprice':lprice, 'lphone':lphone, 'lemail':lemail}
+    limage = singleListing.image
+    context={'lname':lname, 'ltag':ltag, 'ldescription':ldescription,'lprice':lprice, 'lphone':lphone, 'lemail':lemail, 'limage':limage}
     return render(request, 'HoosExchangeSite/singleItem.html', context)

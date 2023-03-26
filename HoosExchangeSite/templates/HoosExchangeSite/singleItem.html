@@ -6,8 +6,37 @@
 </head>
 <body>
 {% include "HoosExchangeSite/header.html" %}
-{{ lname }}
-{{ ldescription }}
+
+{% if limage.url %}
+
+        <img src="{{ limage.url }}" alt="image" style="max-height:300px">
+{% endif %}
+<p> <b>Name of seller: </b> {{ lname }}</p>
+<p> <b>Price:</b> ${{ lprice }} </p>
+<p> <b>Phone:</b>  {{ lphone }}</p>
+<p> <b>Email:</b>  {{ lemail }}</p>
+<br>
+<p> <b>Type:</b>  {{ ltag }}</p>
+<p> <b>Description:</b>  {{ ldescription }}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+{#lname = singleListing.name#}
+{#    ltag = singleListing.tag#}
+{#    ldescription = singleListing.description#}
+{#    lprice = singleListing.price#}
+{#    lphone = singleListing.phone_number#}
+{#    lemail = singleListing.email#}
+{#    limage = singleListing.image#}
 
 
 </body>

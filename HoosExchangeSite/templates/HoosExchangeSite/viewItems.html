@@ -9,21 +9,21 @@
 
 {% if listings_list %}
     {% for listing in listings_list %}
-        <li>
-            <h5>{{ listing.tag }}</h5>
-            <a href = "{% url 'singleItem' id=listing.id %}">
-                {{ listing.name }}
-            </a>
 
-         {% if listing.image.url %}
-        <h3>Succesfully uploaded : {{img_obj}}</h3>
+
+            <a href = "{% url 'singleItem' id=listing.id %}">
+                {% if listing.image.url %}
+
         <img src="{{ listing.image.url }}" alt="image" style="max-height:300px">
         {% endif %}
+            </a>
 
 
 
 
-        </li>
+
+
+
     {% endfor %}
 
 {% endif %}

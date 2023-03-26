@@ -12,6 +12,7 @@ class Listing(models.Model):
         ("Top", "Top"),
         ("Shoes", "Shoes"),
         ("Accessory", "Accessory"),
+        ("Other", "Other"),
     )
 
 
@@ -35,6 +36,7 @@ class newModel(models.Model):
         ("Top", "Top"),
         ("Shoes", "Shoes"),
         ("Accessory", "Accessory"),
+        ("Other", "Other"),
     )
 
     name = models.CharField(max_length=100)
