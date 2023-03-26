@@ -57,5 +57,12 @@ def viewItems(request):
         return render(request, 'HoosExchangeSite/viewItems.html',
                        {'listings_list': Listings})
 def singleItem(request, id):
-
-
+    singleListing= Listing.objects.get(id=id)
+    lname = singleListing.name
+    ltag = singleListing.tag
+    ldescription = singleListing.description
+    lprice = singleListing.price
+    lphone = singleListing.phone_number
+    lemail = singleListing.email
+    context={'lname':lname, 'ltag':ltag, 'ldescription':ldescription,'lprice':lprice, 'lphone':lphone, 'lemail':lemail}
+    return render(request, 'HoosExchangeSite/singleItem.html', context)
