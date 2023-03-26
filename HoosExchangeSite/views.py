@@ -33,10 +33,11 @@ def makePost(request: HttpRequest):
             price = form.cleaned_data['price']
             phone_number = form.cleaned_data['phone_number']
             email = form.cleaned_data['email']
-            img = form.cleaned_data['img']
+
+
 
             newListing = Listing(name=name, tag=tag, description=description, price=price, phone_number=phone_number,
-                                 email=email, image=img)
+                                 email=email)
             newListing.save()
 
     else:
