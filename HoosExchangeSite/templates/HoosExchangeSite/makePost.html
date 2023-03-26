@@ -1,20 +1,87 @@
 <!DOCTYPE html>
+{# homepage #}
+
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body, html {
+      height: 100%;
+    }
+    .parallax1 {
+      /* The image used */
+      background-image: url("https://cdna.artstation.com/p/assets/images/images/005/570/154/large/mim-xiong-04.jpg?1492064482");
+
+      /* Set a specific height */
+      height: 100%;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-alight: center;
+    }
+
+    .center-text{
+        text-align: center;
+    }
+
+    .center-text:before{
+         content: '';
+         display: inline-block;
+         height: 100%;
+         vertical-align: middle;
+    }
+
+    .h4{
+        background-color: #c2f0c2;
+        color: #004C54;
+    }
+
+    .h2{
+        background-color: #c2f0c2;
+        color: #004C54;
+        padding: 10px;
+    }
+
+    .parallax1-content {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    </style>
 </head>
 <body>
 {% include "HoosExchangeSite/header.html" %}
 
-<form action="/makePost/" method = "post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
+<div class="parallax1 center-text">
+    <div class="parallax1-content">
+        <form action="/makePost/" method = "post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container" style="background-color:#c2f0c2">
+                <p class="h2"> Exchange an Item! </p>
+                <p class="h4"> Name: {{ form.name }} </p>
+                <p class="h4"> Item Tag: {{ form.tag }} </p>
+                <p class="h4"> Item Description: {{ form.description }} </p>
+                <p class="h4"> Price: {{ form.price }} </p>
+                <p class="h4"> Phone Number: {{ form.phone_number }} </p>
+                <p class="h4"> Email: {{ form.email }} </p>
+                <p class="h4"> Image Upload: {{ form.image }} </p>
+                <input type="submit" value="Post!">
+            </div>
+        </form>
+    </div>
+</div>
 
-
-    <input type="submit" value="Post!">
-
-</form>
 
 
 </body>
