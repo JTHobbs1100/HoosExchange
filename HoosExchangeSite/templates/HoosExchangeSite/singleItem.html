@@ -20,7 +20,7 @@ body, html {
 }
 .parallax1 {
   /* The image used */
-  background-image: url("https://cdna.artstation.com/p/assets/images/images/005/570/154/large/mim-xiong-04.jpg?1492064482");
+  background-image: url("https://news.virginia.edu/sites/default/files/article_image/sustainability_plan_ss_header.jpg");
 
   /* Set a specific height */
   height: 100%;
@@ -82,7 +82,7 @@ body, html {
 
     <div class="parallax1 center-text">
         <div class="parallax1-content">
-            <div class="container" style="background-color:#c2f0c2">
+            <div class="container pt-3" style="background-color:#c2f0c2">
             {% if limage.url %}
                 <img src="{{ limage.url }}" alt="image" style="max-height:300px">
             {% endif %}
@@ -92,6 +92,25 @@ body, html {
             <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Email:</b>  {{ lemail }}</h4>
             <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Type:</b>  {{ ltag }}</h4>
             <h4 style="background-color:#c2f0c2; color:#004C54"> <b>Description:</b>  {{ ldescription }}</h4>
+            {% if ltag == "Bottoms" %}
+            <br>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> By buying these pants/bottoms, you are saving approximately
+            33kg of CO2 from being emitted into the atmosphere - that's about how much a regular car produces by driving 70
+            miles! </h4>
+            {% elif ltag == "Top" %}
+            <br>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> By buying this top, you are saving approximately
+            6.75kg of CO2 from being emitted into the atmosphere - that's about 15 pounds of CO2 </h4>
+            {% elif ltag == "Shoes" %}
+            <br>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> By buying these shoes, you are saving approximately
+            30 pounds of CO2 from being emitted into the atmosphere </h4>
+            {% else %}
+            <br>
+            <h4 style="background-color:#c2f0c2; color:#004C54"> By buying this item, you are making an awesome environmental
+            impact that is saving CO2 from being emitted into the atmosphere!</h4>
+            {% endif %}
+
             </div>
         </div>
     </div>
