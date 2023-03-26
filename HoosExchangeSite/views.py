@@ -61,7 +61,7 @@ def viewItems(request):
                        {'listings_list': Listings})
 def singleItem(request, id):
     singleListing= Listing.objects.get(id=id)
-    lname = singleListing.person_name
+    lname = singleListing.name
     ltag = singleListing.tag
     ldescription = singleListing.description
     lprice = singleListing.price

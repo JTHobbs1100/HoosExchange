@@ -27,7 +27,7 @@ class makeListingForm(ModelForm):
 
     class Meta:
         model = Listing
-        fields = ['person_name', 'tag', 'description', 'price', 'phone_number', 'email', 'image','item_name'] #add image here
+        fields = ['name', 'tag', 'description', 'price', 'phone_number', 'email', 'image', 'item_name'] #add image here
 
 
 

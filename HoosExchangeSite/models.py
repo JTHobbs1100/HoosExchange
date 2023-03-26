@@ -15,7 +15,7 @@ class Listing(models.Model):
     )
 
 
-    person_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     item_name = models.CharField(max_length=100)
     tag = models.CharField(max_length=100, choices=TYPES)
     description = models.CharField(max_length=1000)
@@ -27,7 +27,7 @@ class Listing(models.Model):
     #image = models.ImageField(upload_to='images/') #, default='static/HoosExchangeSite/images/noImage.png'
 
     def __str__(self):
-        return self.person_name.__str__() + "'s Item"
+        return self.name.__str__() + "'s Item"
 
 class newModel(models.Model):
     name = models.CharField(max_length=100)
