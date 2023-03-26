@@ -7,7 +7,7 @@
 <body>
 {% include "HoosExchangeSite/header.html" %}
 
-<form action="/viewItems/" method = "post" enctype="multipart/form-data">
+<form action="/makePost/" method = "post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
 

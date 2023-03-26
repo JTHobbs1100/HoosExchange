@@ -5,6 +5,7 @@ from PIL import Image
 import random
 
 
+
 class Listing(models.Model):
     TYPES = (
         ("Bottoms", "Bottoms"),
@@ -20,7 +21,6 @@ class Listing(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=10)
     phone_number = models.IntegerField()
     email = models.CharField(max_length=100)
-    # pk = random.randint(1, 1000000000)
     #img = models.ImageField(upload_to='images/') <-----
     #image = models.ImageField(upload_to='images/') #, default='static/HoosExchangeSite/images/noImage.png'
 

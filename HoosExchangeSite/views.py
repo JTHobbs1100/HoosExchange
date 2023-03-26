@@ -31,9 +31,11 @@ def makePost(request: HttpRequest):
             # personalKey = random.randint(1, 1000000000)
 
 
+
+            # form.key = random.randint(1, 1000)
             form.save()
 
-            return HttpResponseRedirect(reverse('HoosExchangeSite:viewItems'))
+
 
     else:
         form = makeListingForm()
@@ -54,3 +56,6 @@ def viewItems(request):
         Listings = Listing.objects.all()
         return render(request, 'HoosExchangeSite/viewItems.html',
                        {'listings_list': Listings})
+def singleItem(request, id):
+
+

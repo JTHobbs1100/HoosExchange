@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homeView, name='home'),
     path('makePost/', views.makePost, name='makePost'),
-    path('viewItems/', views.viewItems, name='viewItems')
+    path('viewItems/', views.viewItems, name='viewItems'),
+    path('singleItem/<int:id>', views.singleItem, name='singleItem')
 
 ]
 if settings.DEBUG:
