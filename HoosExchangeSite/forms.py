@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from HoosExchangeSite.models import Listing
+from HoosExchangeSite.models import newModel
 from PIL import Image
 from django.core.files.uploadedfile import SimpleUploadedFile
 
@@ -26,7 +26,7 @@ class makeListingForm(ModelForm):
     # img = forms.ImageField()
 
     class Meta:
-        model = Listing
+        model = newModel
         fields = ['name', 'tag', 'description', 'price', 'phone_number', 'email', 'image'] #add item_name here
 
 

@@ -13,7 +13,7 @@ from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 import random
 
-from .models import Listing
+from .models import newModel
 from .forms import makeListingForm
 
 
@@ -56,11 +56,11 @@ def makePost(request: HttpRequest):
 
 def viewItems(request):
 
-        Listings = Listing.objects.all()
+        Listings = newModel.objects.all()
         return render(request, 'HoosExchangeSite/viewItems.html',
                        {'listings_list': Listings})
 def singleItem(request, id):
-    singleListing= Listing.objects.get(id=id)
+    singleListing= newModel.objects.get(id=id)
     lname = singleListing.name
     ltag = singleListing.tag
     ldescription = singleListing.description
