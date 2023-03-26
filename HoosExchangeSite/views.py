@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
+import random
 
 from .models import Listing
 from .forms import makeListingForm
@@ -27,8 +28,11 @@ def makePost(request: HttpRequest):
 
         form = makeListingForm(request.POST, request.FILES)
         if form.is_valid():
+            # personalKey = random.randint(1, 1000000000)
+
 
             form.save()
+
             return HttpResponseRedirect(reverse('HoosExchangeSite:viewItems'))
 
     else:
