@@ -15,14 +15,16 @@ class Listing(models.Model):
     )
 
 
-    name = models.CharField(max_length=100)
+    person_name = models.CharField(max_length=100)
+    item_name = models.CharField(max_length=100)
     tag = models.CharField(max_length=100, choices=TYPES)
     description = models.CharField(max_length=1000)
     price = models.DecimalField(decimal_places=2, max_digits=10)
     phone_number = models.IntegerField()
     email = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images', default="/HoosExchangeSite/images/noImage.png")
     #img = models.ImageField(upload_to='images/') <-----
     #image = models.ImageField(upload_to='images/') #, default='static/HoosExchangeSite/images/noImage.png'
 
     def __str__(self):
-        return self.name.__str__() + "'s Item"
+        return self.person_name.__str__() + "'s Item"

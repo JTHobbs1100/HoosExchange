@@ -22,6 +22,7 @@ def homeView(request: HttpRequest):
 
 def makePost(request: HttpRequest):
     name = "BAD"
+    img_object = "BADBADBAD"
 
 
     if request.method == 'POST':
@@ -34,6 +35,7 @@ def makePost(request: HttpRequest):
 
             # form.key = random.randint(1, 1000)
             form.save()
+            img_object = form.instance
 
 
 
@@ -47,6 +49,7 @@ def makePost(request: HttpRequest):
     context = {
         'form': form,
         'name': name,
+        'img_obj': img_object,
     }
 
     return render(request, 'HoosExchangeSite/makePost.html', context)
@@ -58,7 +61,7 @@ def viewItems(request):
                        {'listings_list': Listings})
 def singleItem(request, id):
     singleListing= Listing.objects.get(id=id)
-    lname = singleListing.name
+    lname = singleListing.person_name
     ltag = singleListing.tag
     ldescription = singleListing.description
     lprice = singleListing.price

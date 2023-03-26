@@ -15,6 +15,11 @@
                 {{ listing.name }}
             </a>
 
+         {% if listing.image.url %}
+        <h3>Succesfully uploaded : {{img_obj}}</h3>
+        <img src="{{ listing.image.url }}" alt="image" style="max-height:300px">
+        {% endif %}
+
 
 
 
